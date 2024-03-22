@@ -1,9 +1,7 @@
-weight=float(input('Введите вес (в фунтах): '))
-high=float(input('Введите рост (в дюймах): '))
-weight_kg=weight/2.205
-high_metr=(high/39.3701)/100
-imt=weight_kg/(high_metr**2)
-imt_r=round(imt, 2)
+weight=float(input('Введите вес: '))
+high=float(input('Введите рост: '))
+imt_r=weight/((high/100) ** 2)
+imt_r=round(imt_r,2)
 if imt_r < 16:
     print('выраженный дефицит массы тела')
 elif 16 <= imt_r <= 18.49:
@@ -16,5 +14,5 @@ elif 30 <= imt_r <= 34.99:
     print('ожирение первой степени')
 elif 35 <= imt_r <= 39.99:
     print('ожирение второй степени')
-else:
+elif imt_r >= 40:
     print('ожирение третьей степени')
